@@ -8,8 +8,10 @@
 > Return to upstream when its declared library dependency resolves and the
 > replacement passes setup, restart and status checks. Preserve the HA config
 > entry and entity registry when replacing code; back up before switching.
-> Check upstream releases manually before each fork update. No automatic
-> monitoring is configured.
+> A daily GitHub Actions check tracks upstream packaging availability. Subscribe
+> to [tracking issue #1](https://github.com/thngkaiyuan/omni-pca/issues/1) for
+> candidate notifications, switch-back instructions and an agent handoff prompt.
+> The monitor does not update HA or prove live compatibility.
 
 # omni-pca
 

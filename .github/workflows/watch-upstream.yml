@@ -1,0 +1,25 @@
+name: Watch upstream packaging fix
+on:
+  schedule:
+    - cron: '23 17 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: upstream-packaging-monitor
+  cancel-in-progress: false
+jobs:
+  check:
+    if: github.repository == 'thngkaiyuan/omni-pca'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Inspect latest stable release and report actionable changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+        run: python3 scripts/watch-upstream.py
