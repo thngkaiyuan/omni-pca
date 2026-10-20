@@ -1,13 +1,20 @@
 {
     "domain": "omni_pca",
     "name": "HAI/Leviton Omni Panel",
-    "codeowners": ["@rsp2k"],
+    "codeowners": [
+        "@rsp2k"
+    ],
     "config_flow": true,
-    "dependencies": ["http", "websocket_api"],
+    "dependencies": [
+        "http",
+        "websocket_api"
+    ],
     "documentation": "https://hai-omni-pro-ii.warehack.ing/",
     "integration_type": "hub",
     "iot_class": "local_push",
     "issue_tracker": "https://github.com/rsp2k/omni-pca/issues",
-    "requirements": ["omni-pca==2026.5.16"],
-    "version": "2026.5.16"
+    "requirements": [
+        "omni-pca @ https://github.com/rsp2k/omni-pca/archive/73f05188ddb29a37bc5570a38696342122420844.zip"
+    ],
+    "version": "2026.5.16.post1"
 }

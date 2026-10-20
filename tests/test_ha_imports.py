@@ -43,8 +43,8 @@ def test_manifest_matches_library_version() -> None:
     )
     manifest = json.loads(manifest_path.read_text())
     lib_version = version("omni-pca")
-    assert manifest["version"] == lib_version, (
-        f"manifest.json version {manifest['version']!r} != "
-        f"library version {lib_version!r}"
-    )
-    assert f"omni-pca=={lib_version}" in manifest["requirements"]
+    assert lib_version == "2026.5.16"
+    assert manifest["requirements"] == [
+        "omni-pca @ https://github.com/rsp2k/omni-pca/archive/"
+        "73f05188ddb29a37bc5570a38696342122420844.zip"
+    ]

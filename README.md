@@ -1,3 +1,16 @@
+> Temporary HA packaging fork: `2026.5.16.post1` keeps the upstream v2026.5.16
+> integration and library behavior unchanged. The manifest obtains the missing
+> PyPI library release from immutable upstream commit
+> `73f05188ddb29a37bc5570a38696342122420844` instead. No panel commands or
+> permission behavior are modified. Do not install alongside the original HACS
+> repository: both provide the `omni_pca` domain.
+>
+> Return to upstream when its declared library dependency resolves and the
+> replacement passes setup, restart and status checks. Preserve the HA config
+> entry and entity registry when replacing code; back up before switching.
+> Check upstream releases manually before each fork update. No automatic
+> monitoring is configured.
+
 # omni-pca
 
 Async Python client for HAI/Leviton Omni-Link II home automation panels — Omni Pro II, Omni IIe, Omni LTe, Lumina.
